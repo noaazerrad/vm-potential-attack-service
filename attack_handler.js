@@ -1,22 +1,13 @@
 import * as fs from "fs";
 
-
-function getFileData(fileName){
-    const file = fs.readFileSync(`data/${fileName}`, 'utf8')
-   return JSON.parse(file)
-}
-
-export function handleVmRequestDate(fileName, vmId){
-    const dateSource = getFileData(fileName)
-
-
+export function handleVmRequestDate(dateSource, vmId) {
     const vms = dateSource['vms']
     const rules = dateSource['fw_rules']
 
     return vmAttackValidator(vmId, vms, rules)
 }
 
-function vmAttackValidator(vmId,vms, rules) {
+function vmAttackValidator(vmId, vms, rules) {
     console.log(`checking vmId ${vmId}`)
     let vm_tags
     vms.filter(m => {
@@ -26,7 +17,7 @@ function vmAttackValidator(vmId,vms, rules) {
         return vm_tags
     })
 
-    const rulesWithPotentialAttack = rules.find(
+    const rulesWithPotentialAttack = rules.filter(
         r => vm_tags.includes(r['dest_tag'])
     )
 
@@ -34,17 +25,14 @@ function vmAttackValidator(vmId,vms, rules) {
         return 'no potential risk was found'
     }
 
-        let vmIdsWithRisk = []
-        if (typeof rulesWithPotentialAttack === 'object') {
-            vmIdsWithRisk = findVmsWithAttackPotential(vms, rulesWithPotentialAttack['source_tag'])
-        } else {
-            rulesWithPotentialAttack.map((r) => {
-                const sourceTag = r['source_tag']
-                vmIdsWithRisk = findVmsWithAttackPotential(vms, sourceTag)
-            })
-        }
+    let vmIdsWithRisk = []
+    rulesWithPotentialAttack.map((r) => {
+            const sourceTag = r['source_tag']
+            vmIdsWithRisk = findVmsWithAttackPotential(vms, sourceTag)
+        })
 
-    return  vmIdsWithRisk.filter(Boolean)
+
+    return vmIdsWithRisk.filter(Boolean)
 
 }
 
