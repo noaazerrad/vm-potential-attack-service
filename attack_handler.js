@@ -1,6 +1,15 @@
 import * as fs from "fs";
 
-export function handleVmRequestDate(dateSource, vmId) {
+
+function getFileData(fileName) {
+    const file = fs.readFileSync(`data/${fileName}`, 'utf8')
+    return JSON.parse(file)
+}
+
+export function handleVmRequestDate(fileName, vmId) {
+    const dateSource = getFileData(fileName)
+
+
     const vms = dateSource['vms']
     const rules = dateSource['fw_rules']
 
@@ -26,11 +35,11 @@ function vmAttackValidator(vmId, vms, rules) {
     }
 
     let vmIdsWithRisk = []
-    rulesWithPotentialAttack.map((r) => {
-            const sourceTag = r['source_tag']
-            vmIdsWithRisk = findVmsWithAttackPotential(vms, sourceTag)
-        })
 
+    rulesWithPotentialAttack.map((r) => {
+        const sourceTag = r['source_tag']
+        vmIdsWithRisk = findVmsWithAttackPotential(vms, sourceTag)
+    })
 
     return vmIdsWithRisk.filter(Boolean)
 
