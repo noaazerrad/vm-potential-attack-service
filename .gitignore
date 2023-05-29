@@ -1,0 +1,9 @@
+# Dependency directories
+node_modules/
+
+# Logs and databases #
+######################
+*.log
+
+# Optional npm cache directory
+.npm

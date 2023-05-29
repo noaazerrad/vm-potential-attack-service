@@ -1,6 +1,6 @@
 import express from 'express'
 import {argv} from 'node:process';
-import {handleVmRequestDate} from "attack_handler.js";
+import {handleVmRequestDate} from "../../../development/vm-protection-service/attack_handler.js";
 import fs from "fs";
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
