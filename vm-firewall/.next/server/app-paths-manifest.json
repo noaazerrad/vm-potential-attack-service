@@ -1,0 +1,6 @@
+{
+  "/page": "app/page.js",
+  "/file_selection/page": "app/file_selection/page.js",
+  "/api/file_selection/route": "app/api/file_selection/route.js",
+  "/api/file_selection/[attack]/route": "app/api/file_selection/[attack]/route.js"
+}
