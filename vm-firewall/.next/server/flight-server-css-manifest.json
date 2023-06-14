@@ -1,0 +1,22 @@
+{
+  "cssImports": {
+    "/home/noa/Documents/local-env/development/vm-potential-attack-service/vm-firewall/app/page.js": [
+      "/home/noa/Documents/local-env/development/vm-potential-attack-service/vm-firewall/app/page.module.css"
+    ],
+    "/home/noa/Documents/local-env/development/vm-potential-attack-service/vm-firewall/app/layout.js": [
+      "/home/noa/Documents/local-env/development/vm-potential-attack-service/vm-firewall/node_modules/next/font/google/target.css?{\"path\":\"app/layout.js\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}",
+      "/home/noa/Documents/local-env/development/vm-potential-attack-service/vm-firewall/app/globals.css"
+    ]
+  },
+  "cssModules": {
+    "/home/noa/Documents/local-env/development/vm-potential-attack-service/vm-firewall/app/page": [
+      "/home/noa/Documents/local-env/development/vm-potential-attack-service/vm-firewall/app/globals.css",
+      "/home/noa/Documents/local-env/development/vm-potential-attack-service/vm-firewall/node_modules/next/font/google/target.css?{\"path\":\"app/layout.js\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}",
+      "/home/noa/Documents/local-env/development/vm-potential-attack-service/vm-firewall/app/page.module.css"
+    ],
+    "/home/noa/Documents/local-env/development/vm-potential-attack-service/vm-firewall/app/file_selection/page": [
+      "/home/noa/Documents/local-env/development/vm-potential-attack-service/vm-firewall/app/globals.css",
+      "/home/noa/Documents/local-env/development/vm-potential-attack-service/vm-firewall/node_modules/next/font/google/target.css?{\"path\":\"app/layout.js\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}"
+    ]
+  }
+}
